@@ -6,10 +6,6 @@ id -u ec2-user &>/dev/null || adduser -ms /bin/bash ec2-user
 
 # Update the packages, and clean dnf to keep image small.
 dnf upgrade -y && \
+    dnf install docker && \
     dnf autoremove && \
     dnf clean all;
-
-# Configure Git
-# pip install git-remote-codecommit;
-# git config --global credential.helper '!aws codecommit credential-helper $@';
-# git config --global credential.UseHttpPath true;

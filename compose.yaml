@@ -2,17 +2,16 @@
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 
-# Here the instructions define your application as a service called "server".
+# Here the instructions define your application as a service called "mock-ec2-instance".
 # This service is built from the Dockerfile in the current directory.
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  ec2-server:
+  mock-ec2-instance:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mh_amazon_linux_2023_docker
+    image: amazon_linux_2023_docker
     ports:
       - ":22"
-      - ":80"
